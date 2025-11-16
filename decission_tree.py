@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.tree import DecisionTreeClassifier, plot_tree
 from sklearn.metrics import f1_score, classification_report
 import matplotlib.pyplot as plt
 
@@ -11,12 +11,12 @@ input_file = "C:\\Users\\marcg\\Desktop\\Programes python\\Datathons\\2025\\data
 df = pd.read_csv(input_file)
 
 
-X = df.drop(columns=['target_variable'])
+X = df.drop(columns=['target_variable', 'id', 'product_A', 'product_C', 'product_D'])
 y = df['target_variable']
 
 # Fem split en train/test
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.3, random_state=42
+    X, y, test_size=0.2, random_state=42
 )
 
 # Creem i entrenem el DecisionTree, els parametres els he generat a la força.
@@ -39,7 +39,7 @@ print(classification_report(y_test, y_pred))
 
 # Visualització de l’arbre
 plt.figure(figsize=(20,10))
-plt.plot_tree(clf, feature_names=X.columns, class_names=np.unique(y).astype(str), filled=True, fontsize=None)
+plot_tree(clf, feature_names=X.columns, class_names=np.unique(y).astype(str), filled=True, fontsize=None)
 plt.savefig("C:\\Users\\marcg\\Desktop\\Programes python\\Datathons\\2025\\tree.png", dpi = 600)
 
 print("\n\nFeature importances:")
