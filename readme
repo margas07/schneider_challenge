@@ -1,1 +1,12 @@
-Hola! Sóc un readme, sisplau llegeix-me!
+It has always been a really exciting prospect for to participate in a hackathon. Being able to do that for the first time has been a very formative experience.
+
+For Datathon 2025, Schneider Electric granted us some data points on previous **sale opportunities**; e.g. information about the customer, whether the products were recommended to a customer in the past, and whether the opportunity was successful at all. Then, with this data, we were tasked to use data and ML techniques to predict whether a sale would be successful or not based on its attributes. Additionally, we were asked to use **explainability techniques** to gain insight on how different features influence these predictions, which we can then turn into business insights.
+
+## What it does
+We have trained two models -- one based on a simple decision tree, one based on a random forest technique -- that predict whether a sale opportunity was successful with f1 = 0.83 performance, and offer insights on which features influence these predictions.
+
+## How we built it
+We were motivated by the decision tree structure because its **feature importance** feature, which we thought might help us explain the model's decisions, as was requested. We also considered a random forest structure -- a bigger and more intricate variant of the decision tree structure featuring multiple of them, which shares many features with it -- and made a model with it, as well. This second model's results did not differ too much from the former's.
+
+## Challenges we ran into and accomplishments that we're proud of
+As our first time, we had to learn about different model structures from scratch, and we had to figure out how to train models in the first place. Difficult as it was, it came to be a very exciting experience. Although rudimentary, the four of us are proud to have obtained as much new knowledge, both practical and theoretical, as we did.
